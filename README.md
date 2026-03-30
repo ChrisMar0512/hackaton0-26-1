@@ -118,21 +118,6 @@ Los 3 links del menú apuntan a IDs incorrectos:
 
 ---
 
-### #4 — Bug de CSS (1 PR)
-
-En `index.css`, en la **línea 2**, hay una regla suelta que sobreescribe el color del `h1`:
-
-```css
-/* BUG #4: esta regla sobreescribe el color correcto del h1 definido más abajo */
-h1 { color: purple; }
-```
-
-Esta regla hace que el título principal del hero se vea de color morado en lugar del color correcto (`var(--color-secondary)`). Debe eliminarse.
-
-**Rama sugerida:** `bugfix/h1-color`
-
----
-
 ### ✅ Publicado en GitHub Pages
 
 El deploy es **automático** gracias al workflow `.github/workflows/deploy.yml`. Cada push a `main` despliega la página sin configuración manual.
@@ -188,9 +173,8 @@ La tarea del equipo es **resolver esto manualmente**, eliminando los marcadores 
 | `feat/member-nombre` | Cada integrante | Datos personales | 1 por persona |
 | `clean-css` | 1 integrante | CSS modular | 1 PR |
 | `navbar-fix` | 1 integrante | Corrección de enlaces | 1 PR |
-| `bugfix/h1-color` | 1 integrante | Bug de CSS | 1 PR |
 
-> El líder puede asignar las ramas `clean-css`, `navbar-fix` y `bugfix/h1-color` como tareas a distintos integrantes del equipo.
+> El líder puede asignar las ramas `clean-css`, `navbar-fix` como tareas a distintos integrantes del equipo.
 
 ## ⚙️ GitHub Actions incluidas
 
@@ -203,7 +187,7 @@ La tarea del equipo es **resolver esto manualmente**, eliminando los marcadores 
 - Valida que el HTML sea correcto según el estándar W3C
 - Verifica que todos los `href="#..."` del HTML apunten a un `id` que realmente existe — el PR **no podrá mergearse** si el navbar tiene links rotos
 
-**`deploy.yml`** despliega automáticamente la página en GitHub Pages tras cada merge a `main`.
+**`deploy.yml`** despliega automáticamente la página en GitHub Pages tras cada merge a `main` (TODO).
 
 ---
 
